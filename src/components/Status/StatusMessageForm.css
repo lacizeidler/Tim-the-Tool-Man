@@ -1,0 +1,47 @@
+.message__form {
+    border: black solid 2px;
+    padding: 1%;
+    width: 98%;
+    position: fixed;
+    bottom: 5px;
+    background-color: white;
+}
+.message__textarea {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2%;
+}
+.message__textarea label {
+    margin-bottom: 1%;
+    font-size: 15px;
+}
+.message__textarea textarea {
+    height: 18px;
+    padding-right: 2%;
+}
+.message__form button {
+    font-size: 12px;
+    padding: 0px 1%;
+}
+.previous__messages {
+    border: black solid 2px;
+    width: 100%;
+    margin: 1% 0px;
+    padding: 1%;
+    font-size: 12px;
+}
+.spacer {
+    height: 150px;
+}
+.color {
+    background-color: rgb(246, 246, 246);
+    border: black solid 2px;
+    width: 100%;
+    margin: 1% 0px;
+    padding: 1%;
+    font-size: 12px;
+}
+.request__description {
+    text-align: center;
+    font-size: 30px;
+}

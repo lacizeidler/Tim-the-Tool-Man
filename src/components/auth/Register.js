@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react"
 import { useHistory } from "react-router-dom"
-import { GetRegisterExistingUserCheck } from "../ApiManager"
 import "./Login.css"
 
 export const Register = (props) => {
@@ -10,7 +9,9 @@ export const Register = (props) => {
     const history = useHistory()
 
     const existingUserCheck = () => {
-        GetRegisterExistingUserCheck()
+        return fetch(`http://localhost:8088/users?email=${customer.email}`)
+            .then(res => res.json())
+            .then(user => !!user.length)
     }
     const handleRegister = (e) => {
         e.preventDefault()
@@ -53,7 +54,7 @@ export const Register = (props) => {
             </dialog>
 
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Tim the Tool Man</h1>
+                <h1 className="h3 mb-3 font-weight-normal">Please Register for Honey Rae Repairs</h1>
                 <fieldset>
                     <label htmlFor="name"> Full Name </label>
                     <input onChange={updateCustomer}

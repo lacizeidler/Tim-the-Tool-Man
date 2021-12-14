@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
-import { GetExistingUserCheck } from "../ApiManager";
 import "./Login.css"
 
 export const Login = () => {
@@ -10,7 +9,9 @@ export const Login = () => {
     const history = useHistory()
 
     const existingUserCheck = () => {
-        GetExistingUserCheck()
+        return fetch(`http://localhost:8088/users?email=${email}`)
+            .then(res => res.json())
+            .then(user => user.length ? user[0] : false)
     }
 
     const handleLogin = (e) => {
@@ -35,7 +36,6 @@ export const Login = () => {
 
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Tim the Tool Man</h1>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>

@@ -1,0 +1,18 @@
+.user__name {
+    list-style-type: none;
+    font-size: 20px;
+    border: black 2px solid;
+    padding: 2% 5%;
+    margin: 1% 20%;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+.user__list {
+    display: flex;
+    flex-direction: column
+}
+.name__title {
+    text-align: center;
+    font-size: 40px;
+}

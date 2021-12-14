@@ -1,0 +1,31 @@
+.request__form {
+    text-align: center;
+    font-size: 40px;
+}
+.form {
+    border: black 2px solid;
+    padding: 6% 10%;
+    margin: 6% 10%;
+}
+.topic__select {
+    font-size: 20px;
+    margin: 3% 0px;
+}
+.form__submit {
+    font-size: 20px;
+    padding: 1% 5%;
+    border-radius: 10px;
+    margin: 3% 0px;
+}
+.description {
+    font-size: 20px;
+    margin: 3% 0px;
+    display: flex;
+    flex-direction: column;
+}
+.description label {
+    margin-bottom: 2%;
+}
+.description textarea {
+    height: 100px;
+}

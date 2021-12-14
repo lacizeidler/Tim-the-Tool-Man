@@ -1,0 +1,59 @@
+.about__me {
+    text-align: center;
+    font-size: 40px;
+}
+.img__text {
+    display: flex;
+}
+.img__text img {
+    width: 30%;
+    margin: 5% 6% 5% 14%;
+}
+.img__text p {
+    width: 30%;
+    margin: 5% 14% 5% 6%;
+    font-size: 20px;
+}
+.services {
+    text-align: center;
+    padding: 10% 0px;
+}
+.services h2 {
+    font-size: 40px;
+}
+.services__list {
+    background-color: rgba(255, 255, 255, 0.752);
+    border: black solid 1px;
+    margin: 2% 20%;
+    padding: 2%;
+    border-radius: 10px;
+}
+.services p {
+    width: 50%;
+    margin: 5% 25%;
+    font-size: 20px;
+}
+.people__saying {
+    text-align: center;
+    font-size: 40px;
+}
+.services button {
+    font-size: 20px;
+    padding: 1% 5%;
+    border-radius: 10px;
+}
+.reviews {
+    display: flex;
+}
+.single__reviews {
+    border: black 2px solid;
+    margin: 3%;
+    padding: 5%;
+    flex-basis: 30%;
+}
+.single__reviews h4 {
+    font-size: 25px;
+}
+.single__reviews p {
+    font-size: 20px;
+}
