@@ -3,7 +3,9 @@ import { useHistory } from "react-router-dom"
 import "./Login.css"
 
 export const Register = (props) => {
-    const [customer, setCustomer] = useState({})
+    const [customer, setCustomer] = useState({
+        manager: false 
+    })
     const conflictDialog = useRef()
 
     const history = useHistory()

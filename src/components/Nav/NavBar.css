@@ -27,6 +27,7 @@
 
 .navbar {
     display: flex;
+    background-color: white;
 }
 
 .navbar__item{

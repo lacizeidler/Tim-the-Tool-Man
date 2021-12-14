@@ -4,8 +4,7 @@
 import { useHistory } from "react-router"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react/cjs/react.development"
-import { GetRequestsFromUser, GetRequestsTopicsUsersWithId } from "../ApiManager"
-import { EditRequest } from "./EditRequest"
+import { GetRequestsFromUser } from "../ApiManager"
 import "./StatusRequest.css"
 
 export const StatusRequest = () => {

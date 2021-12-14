@@ -4,7 +4,7 @@ import { Customers } from "./customers/Customers"
 import { HomePage } from "./homePage/HomePage"
 import { RequestForm } from "./Requests/RequestForm"
 import { EditRequest } from "./Status/EditRequest"
-import { StatusMessageForm } from "./Status/StatusMessageForm"
+import { StatusMessageList } from "./Status/StatusMessageList"
 import { StatusRequest } from "./Status/StatusRequest"
 
 export const ApplicationViews = () => {
@@ -20,7 +20,7 @@ export const ApplicationViews = () => {
                 <HomePage />
             </Route >
             <Route exact path = "/messageForm/:requestId(\d+)">
-                <StatusMessageForm />
+                <StatusMessageList />
             </Route >
             <Route exact path = "/customers">
                 <Customers />

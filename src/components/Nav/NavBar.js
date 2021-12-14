@@ -25,7 +25,8 @@ export const NavBar = () => {
                     <h1>Tim the Tool Man</h1>
                     <div className="logo__right">
                         {
-                            users.map(users => {
+                            users.map(
+                                (users) => {
                                 if (users.id === currentUser) {
                                     return <h2>Welcome,  {users.name}</h2>
                                 }

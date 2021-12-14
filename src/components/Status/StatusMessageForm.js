@@ -4,32 +4,16 @@
 import "./StatusMessageForm.css"
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
-import { GetMessagesFromRequests, GetRegisterExistingUserCheck } from "../ApiManager"
+import { GetMessagesFromRequests } from "../ApiManager"
 
-export const StatusMessageForm = () => {
+//*When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
+export const StatusMessageForm = ({modifyMessages}) => {
     const { requestId } = useParams()
-    const [messages, modifyMessages] = useState([])
-    const [users, modifyUsers] = useState([])
     const currentUser = parseInt(localStorage.getItem("toolMan_customer"))
     const [message, modifyMessage] = useState({
         message: "",
         requestId: requestId
     })
-
-    useEffect(
-        () => {
-            GetMessagesFromRequests(requestId)
-                .then(modifyMessages)
-        },
-        [requestId]
-    )
-    useEffect(
-        () => {
-            GetRegisterExistingUserCheck()
-                .then(modifyUsers)
-        },
-        []
-    )
 
     const SendMessage = (event) => {
         event.preventDefault()
@@ -46,31 +30,22 @@ export const StatusMessageForm = () => {
             body: JSON.stringify(newMessage)
         }
         fetch("http://localhost:8088/messages", fetchOption)
-            .then(GetMessagesFromRequests(requestId)
-                .then(modifyMessages))
+            .then(
+                () => {
+                    GetMessagesFromRequests(requestId)
+                        .then(modifyMessages)
+                }
+            )
     }
 
+    //* ? is a conditional operator.
     return (
         <>
-            <h2 className="request__description">Request Description: {messages[0]?.request.description}</h2>
-            {
-                messages.map(
-                    message => {
-                        const findUserName = users.find(user => {
-                            return user.id === message.senderId
-                        })
-                        return <div className={message.senderId === 1 ? "color" : "previous__messages"}>
-                            <h2>From: {findUserName?.name}</h2>
-                            <h2>{message.message}</h2>
-                        </div>
-                    }
-                )
-            }
-            <div className="spacer"></div>
             <div className="message__form">
                 <div className="message__textarea">
                     <label>Message: </label>
-                    <textarea
+                    <input
+                        defaultValue=""
                         onChange={
                             (evt) => {
                                 const copy = { ...message }
@@ -81,10 +56,9 @@ export const StatusMessageForm = () => {
                         placeholder="Type message here..."
                         type="text"
                         required autoFocus
-                    ></textarea>
+                    ></input>
                 </div>
-                <button
-                    onClick={SendMessage}
+                <button onClick={SendMessage}
                 >Send</button>
             </div>
         </>

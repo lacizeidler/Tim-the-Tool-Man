@@ -1,0 +1,16 @@
+.edit__request {
+    border: black 2px solid;
+    width: 60%;
+    margin: 0px 20%;
+    text-align: center;
+    padding: 3% 0px;
+}
+.edit__request textarea {
+    height: 100px;
+    width: 60%;
+}
+.edit__request button {
+    padding: 1% 2%;
+    font-size: 15px;
+    margin-top: 3%;
+}

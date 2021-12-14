@@ -2,7 +2,6 @@
     border: black solid 2px;
     padding: 1%;
     width: 98%;
-    position: fixed;
     bottom: 5px;
     background-color: white;
 }
@@ -15,7 +14,7 @@
     margin-bottom: 1%;
     font-size: 15px;
 }
-.message__textarea textarea {
+.message__textarea input {
     height: 18px;
     padding-right: 2%;
 }
@@ -29,9 +28,6 @@
     margin: 1% 0px;
     padding: 1%;
     font-size: 12px;
-}
-.spacer {
-    height: 150px;
 }
 .color {
     background-color: rgb(246, 246, 246);

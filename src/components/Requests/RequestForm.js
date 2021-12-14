@@ -7,28 +7,34 @@ import { GetTopics } from "../ApiManager"
 import { useHistory } from "react-router"
 import "./RequestForm.css"
 
+
 export const RequestForm = () => {
     const history = useHistory()
-    const [ topics, modifyTopics ] = useState([])
-    const [ request, modifyRequest ] = useState({
+    //*the current state and a function that updates it.
+    const [topics, modifyTopics] = useState([])
+    const currentUser = parseInt(localStorage.getItem("toolMan_customer"))
+    const [request, modifyRequest] = useState({
         description: "",
         topicId: 0
     })
 
-    useEffect (
+    //*Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect.
+    useEffect(
         () => {
             GetTopics()
-            .then(modifyTopics)
+                .then(modifyTopics)
         },
         []
     )
 
     const SubmitForm = () => {
+        //* Object that gets Posted to the API in the requests array.
         const newRequest = {
             description: request.description,
             topicId: request.topicId,
             userId: parseInt(localStorage.getItem("toolMan_customer"))
         }
+
         const fetchOption = {
             method: "POST",
             headers: {
@@ -36,50 +42,52 @@ export const RequestForm = () => {
             },
             body: JSON.stringify(newRequest)
         }
-        return fetch("http://localhost:8088/requests", fetchOption)
-        .then(response => response.json())
-        .then(()=> {
-            history.push("/status")
-        })
+        return fetch(`http://localhost:8088/requests`, fetchOption)
     }
 
     return (
         <>
-        <h1 className="request__form">Request Form</h1>
-        <div className="form">
-        <select className ="topic__select"
-            onChange={
-                (evt) => {
-                    const copy = {...request}
-                    copy.topicId = parseInt(evt.target.value)
-                    modifyRequest(copy)
-                }
-            }
-        >
-            <option className="topic__option" value={0}>Select a topic...</option>
-            {
-                topics.map(topic => <option className="topic__option" value={topic.id}>{topic.name}</option>)
-            }
-        </select>
-        <div className="description">
-            <label>Description: </label>
-            <textarea
-                onChange={
-                    (evt) => {
-                        const copy = {...request}
-                        copy.description = evt.target.value
-                        modifyRequest(copy)
+            <h1 className="request__form">Request Form</h1>
+            <div className="form">
+                <select className="topic__select"
+                    onChange={
+                        (evt) => {
+                            const copy = { ...request }
+                            copy.topicId = parseInt(evt.target.value)
+                            modifyRequest(copy)
+                        }
                     }
-                }
-                placeholder="Type a description of the job"
-                type="text"
-                required autoFocus
-            ></textarea>
-        </div>
-        <button className="form__submit"
-            onClick={SubmitForm}
-        >Submit Request</button>        
-        </div>
+                >
+                    <option className="topic__option" value={0}>Select a topic...</option>
+                    {
+                        topics.map(topic => <option className="topic__option" value={topic.id}>{topic.name}</option>)
+                    }
+                </select>
+                <div className="description">
+                    <label>Description: </label>
+                    <textarea
+                        onChange={
+                            (evt) => {
+                                const copy = { ...request }
+                                copy.description = evt.target.value
+                                modifyRequest(copy)
+                            }
+                        }
+                        placeholder="Type a description of the job"
+                        type="text"
+                        required autoFocus
+                    ></textarea>
+                </div>
+                <button className="form__submit"
+                    onClick={
+                        () => {
+                            SubmitForm()
+                            history.push(`/requests/${currentUser}`)
+                        }
+                    }>
+                    Submit Button
+                </button>
+            </div>
         </>
     )
 }

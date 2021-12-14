@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react/cjs/react.development"
 import { GetRequestsTopicsUsersWithId } from "../ApiManager"
+import "./EditRequest.css"
 
 export const EditRequest = () => {
     const { requestId } = useParams()
@@ -35,7 +36,7 @@ export const EditRequest = () => {
     }
     return (
         <>
-            <div>
+            <div className="edit__request">
                 {
                     requests.map(request => {
                         return <div>
@@ -58,7 +59,7 @@ export const EditRequest = () => {
                             UpdatedRequest()
                             history.push(`/requests/${request.userId}`)
                             GetRequestsTopicsUsersWithId(requestId)
-                                .then(modifyRequests)
+                            .then(modifyRequests)
                         }
                     }
                 >
