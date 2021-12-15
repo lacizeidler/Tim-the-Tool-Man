@@ -40,7 +40,7 @@ export const StatusRequest = () => {
                 request => 
                 currentUser === 1
                 ?
-                <div className="status__request">
+                <div className="status__request" key={`request-${request.id}`}>
                     <h2> Customer: {request.user.name}</h2>
                     <h4>Topic: {request.topic.name}</h4>
                     <h4>Description: {request.description}</h4>

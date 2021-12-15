@@ -60,7 +60,7 @@ export const RequestForm = () => {
                 >
                     <option className="topic__option" value={0}>Select a topic...</option>
                     {
-                        topics.map(topic => <option className="topic__option" value={topic.id}>{topic.name}</option>)
+                        topics.map(topic => <option className="topic__option" key={`topic--${topic.id}`} value={topic.id}>{topic.name}</option>)
                     }
                 </select>
                 <div className="description">

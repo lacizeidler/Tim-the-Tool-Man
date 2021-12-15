@@ -19,16 +19,17 @@ export const NavBar = () => {
     )
     return (
         <>
-            <div className="full-nav-bar">
+            <div key="full-nav-bar" className="full-nav-bar">
                 <div className="logo">
                 <img src={wrench} alt="Tiny wrench"></img>
                     <h1>Tim the Tool Man</h1>
                     <div className="logo__right">
                         {
-                            users.map(
-                                (users) => {
+                            users.map(users => {
                                 if (users.id === currentUser) {
-                                    return <h2>Welcome,  {users.name}</h2>
+                                    return <h2 key={`users--${users.id}`} >Welcome,  {users.name}</h2>
+                                } else {
+                                    return ""
                                 }
                             })
                         }

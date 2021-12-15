@@ -2,12 +2,12 @@
 //! This should include an input text box and a button that sends the message to the API. 
 //! This should have the recipientId, senderId, requestId, read boolean, message string, and a Send button. 
 import "./StatusMessageForm.css"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { GetMessagesFromRequests } from "../ApiManager"
 
 //*When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object “props”.
-export const StatusMessageForm = ({modifyMessages}) => {
+export const StatusMessageForm = ({ modifyMessages }) => {
     const { requestId } = useParams()
     const currentUser = parseInt(localStorage.getItem("toolMan_customer"))
     const [message, modifyMessage] = useState({
@@ -16,6 +16,7 @@ export const StatusMessageForm = ({modifyMessages}) => {
     })
 
     const SendMessage = (event) => {
+        //*The preventDefault() method of the Event interface tells the user agent that if the event does not get explicitly handled, its default action should not be taken as it normally would be.
         event.preventDefault()
         const newMessage = {
             message: message.message,
@@ -34,9 +35,11 @@ export const StatusMessageForm = ({modifyMessages}) => {
                 () => {
                     GetMessagesFromRequests(requestId)
                         .then(modifyMessages)
+                        .then(modifyMessage(emptyMessage))
                 }
             )
     }
+    const emptyMessage = {message: ""}
 
     //* ? is a conditional operator.
     return (
@@ -45,7 +48,7 @@ export const StatusMessageForm = ({modifyMessages}) => {
                 <div className="message__textarea">
                     <label>Message: </label>
                     <input
-                        defaultValue=""
+                    value={message.message}
                         onChange={
                             (evt) => {
                                 const copy = { ...message }

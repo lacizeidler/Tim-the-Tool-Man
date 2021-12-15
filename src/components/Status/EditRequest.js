@@ -12,6 +12,8 @@ export const EditRequest = () => {
         description: ""
     })
 
+
+     //*Placing useEffect inside the component lets us access the state variable right from the effect.
     useEffect(
         () => {
             GetRequestsTopicsUsersWithId(requestId)
