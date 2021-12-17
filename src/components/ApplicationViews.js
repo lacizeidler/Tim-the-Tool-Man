@@ -1,5 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { Login } from "./auth/Login"
+import { Register } from "./auth/Register"
 import { Customers } from "./customers/Customers"
 import { HomePage } from "./homePage/HomePage"
 import { RequestForm } from "./Requests/RequestForm"
@@ -27,6 +29,12 @@ export const ApplicationViews = () => {
             </Route >
             <Route exact path = "/requests/edit/:requestId(\d+)">
                 <EditRequest />
+            </Route >
+            <Route exact path = "/login">
+                <Login />
+            </Route >
+            <Route exact path = "/register">
+                <Register />
             </Route >
         </>
     )

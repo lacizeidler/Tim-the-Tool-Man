@@ -26,7 +26,7 @@ export const Customers = () => {
                     user.manager === true
                         ? ""
                         :
-                        <div key="user__list" className="user__list">
+                        <div key={`user__list__${user.id}`} className="user__list">
                             <Link className="user__name" key={`/requests/${user.id}`} to={`/requests/${user.id}`}>{user.name}</Link>
                         </div>
                 )

@@ -21,7 +21,6 @@
 }
 
 .logo h1 {
-    margin-left: 3%;
     font-size: 50px;
 }
 
@@ -42,4 +41,8 @@
 .navbar__link {
     text-decoration: none;
     color: black;
+}
+.unordered__list {
+    display: flex;
+    justify-content: space-around;
 }

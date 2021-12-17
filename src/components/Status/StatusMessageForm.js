@@ -21,7 +21,8 @@ export const StatusMessageForm = ({ modifyMessages }) => {
         const newMessage = {
             message: message.message,
             requestId: parseInt(message.requestId),
-            senderId: currentUser
+            senderId: currentUser,
+            timestamp: Date.now()
         }
         const fetchOption = {
             method: "POST",

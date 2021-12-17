@@ -27,7 +27,7 @@ export const StatusRequest = () => {
             method: "DELETE"
         })
         .then(() => {
-            GetRequestsFromUser()
+            GetRequestsFromUser(userId)
             .then(modifyRequests)
         })
     }
@@ -44,6 +44,8 @@ export const StatusRequest = () => {
                     <h2> Customer: {request.user.name}</h2>
                     <h4>Topic: {request.topic.name}</h4>
                     <h4>Description: {request.description}</h4>
+                    <h4>Budget: ${request.budget}</h4>
+                    <h4>{new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(request.timestamp)}</h4>
                     <button
                     key={`/messageForm/${request.id}`}
                         onClick = {
@@ -65,10 +67,12 @@ export const StatusRequest = () => {
                         >Delete Request</button> 
                 </div>
                 :
-                <div className="status__request">
+                <div className="status__request" key={`request-${request.id}`}>
                     <h2> Customer: {request.user.name}</h2>
                     <h4>Topic: {request.topic.name}</h4>
                     <h4>Description: {request.description}</h4>
+                    <h4>Budget: ${request.budget}</h4>
+                    <h4>{new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(request.timestamp)}</h4>
                     <button
                     key={`/messageForm/${request.id}`}
                         onClick = {

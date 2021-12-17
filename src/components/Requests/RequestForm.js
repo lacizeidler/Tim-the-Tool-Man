@@ -15,7 +15,8 @@ export const RequestForm = () => {
     const currentUser = parseInt(localStorage.getItem("toolMan_customer"))
     const [request, modifyRequest] = useState({
         description: "",
-        topicId: 0
+        topicId: 0,
+        budget: ""
     })
 
     //*Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect.
@@ -32,7 +33,9 @@ export const RequestForm = () => {
         const newRequest = {
             description: request.description,
             topicId: request.topicId,
-            userId: parseInt(localStorage.getItem("toolMan_customer"))
+            userId: parseInt(localStorage.getItem("toolMan_customer")),
+            timestamp: Date.now(),
+            budget: request.budget
         }
 
         const fetchOption = {
@@ -78,7 +81,22 @@ export const RequestForm = () => {
                         required autoFocus
                     ></textarea>
                 </div>
-                <button className="form__submit"
+                <div className="budget">
+                    <label>Budget: </label>
+                    <input
+                        onChange={
+                            (evt) => {
+                                const copy = { ...request }
+                                copy.budget = evt.target.value
+                                modifyRequest(copy)
+                            }
+                        }
+                        placeholder="What's your budget?"
+                        type="text"
+                        required autoFocus
+                    ></input>
+                </div>
+                <button type="submit" className="form__submit"
                     onClick={
                         () => {
                             SubmitForm()

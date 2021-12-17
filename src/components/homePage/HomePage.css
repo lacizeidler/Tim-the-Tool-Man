@@ -12,7 +12,8 @@
 .img__text p {
     width: 30%;
     margin: 5% 14% 5% 6%;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 3em;
 }
 .services {
     text-align: center;
