@@ -32,9 +32,10 @@ export const StatusMessageList = () => {
                         const findUserName = users.find(user => {
                             return user.id === message.senderId
                         })
-                        return <div className={message.senderId === 1 ? "color" : "previous__messages"}>
+                        return <div key={`message--${message.id}`} className={message.senderId === 1 ? "color" : "previous__messages"}>
                             <h2>From: {findUserName?.name}</h2>
                             <h2>{message.message}</h2>
+                            <h2>{new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(message.timestamp)}</h2>
                         </div>
                     }
                 )

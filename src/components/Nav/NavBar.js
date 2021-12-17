@@ -19,7 +19,9 @@ export const NavBar = () => {
     )
     return (
         <>
-            <div key="full-nav-bar" className="full-nav-bar">
+            {
+            currentUser
+            ?<div key="full-nav-bar" className="full-nav-bar">
                 <div className="logo">
                 <img src={wrench} alt="Tiny wrench"></img>
                     <h1>Tim the Tool Man</h1>
@@ -53,7 +55,7 @@ export const NavBar = () => {
                             </li>
                     }
                     <li className="navbar__item">
-                        <Link className="navbar__link" to="#" onClick={
+                        <Link className="navbar__link" to="/" onClick={
                             () => {
                                 localStorage.removeItem("toolMan_customer")
                             }
@@ -61,6 +63,25 @@ export const NavBar = () => {
                     </li>
                 </ul>
             </div>
+            :
+            <div>
+                <div className="logo">
+                <img src={wrench} alt="Tiny wrench"></img>
+                    <h1>Tim the Tool Man</h1>
+                </div>
+                <ul className="unordered__list">
+                    <li className="navbar__item active">
+                        <Link className="navbar__link" to="/">Home</Link>
+                    </li>
+                    <li className="navbar__item active">
+                        <Link className="navbar__link" to="/login">Login</Link>
+                    </li>
+                    <li className="navbar__item active">
+                        <Link className="navbar__link" to="/register">Register</Link>
+                    </li>
+                </ul>
+                </div>
+        }
         </>
     )
 }

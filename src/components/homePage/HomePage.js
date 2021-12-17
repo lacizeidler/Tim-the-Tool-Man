@@ -14,7 +14,7 @@ export const HomePage = () => {
             <h2 className="about__me">About Me</h2>
             <div className="img__text">
                 <img src={man} alt="man"></img>
-                <p>Hi! My name is Tim and I am somehow good at literally everything when it comes to home improvement. </p>
+                <p>Hi! My name is Tim! I am from a small town in Southern Illinois and I love everything home improvement. I have helped out a bunch of friends and family and over the years, have learned plumbing, electrical, installation, and much more. I figured I could bring my talents out to the public to help people with their projects, too. If you need my help, please click the button below to fill out a form. </p>
             </div>
             <div className="services" style={{backgroundImage: `url(${tools})`}}>
                 <div className="services__list">
