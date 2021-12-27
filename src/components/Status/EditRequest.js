@@ -26,7 +26,9 @@ export const EditRequest = () => {
         const updateRequest = {
             description: request.description,
             userId: request.userId,
-            topicId: request.topicId
+            topicId: request.topicId,
+            statusId: request.statusId,
+            budget: request.budget
         }
         fetch(`http://localhost:8088/requests/${requestId}`, {
             method: "PUT",
@@ -45,6 +47,7 @@ export const EditRequest = () => {
                             <h2>{request.user.name}</h2>
                             <h2>{request.topic.name}</h2>
                             <textarea
+                            key={`request-${request.id}`}
                                 onChange={
                                     (evt) => {
                                         const copy = { ...request }

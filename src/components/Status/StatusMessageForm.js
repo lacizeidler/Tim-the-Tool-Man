@@ -12,7 +12,8 @@ export const StatusMessageForm = ({ modifyMessages }) => {
     const currentUser = parseInt(localStorage.getItem("toolMan_customer"))
     const [message, modifyMessage] = useState({
         message: "",
-        requestId: requestId
+        requestId: requestId,
+        read: false
     })
 
     const SendMessage = (event) => {
@@ -22,7 +23,8 @@ export const StatusMessageForm = ({ modifyMessages }) => {
             message: message.message,
             requestId: parseInt(message.requestId),
             senderId: currentUser,
-            timestamp: Date.now()
+            timestamp: Date.now(),
+            read: message.read
         }
         const fetchOption = {
             method: "POST",

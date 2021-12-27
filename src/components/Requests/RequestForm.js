@@ -16,7 +16,8 @@ export const RequestForm = () => {
     const [request, modifyRequest] = useState({
         description: "",
         topicId: 0,
-        budget: ""
+        budget: "",
+        statusId: 1
     })
 
     //*Placing useEffect inside the component lets us access the count state variable (or any props) right from the effect.
@@ -35,7 +36,8 @@ export const RequestForm = () => {
             topicId: request.topicId,
             userId: parseInt(localStorage.getItem("toolMan_customer")),
             timestamp: Date.now(),
-            budget: request.budget
+            budget: request.budget,
+            statusId: request.statusId
         }
 
         const fetchOption = {
