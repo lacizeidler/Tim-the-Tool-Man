@@ -5,6 +5,7 @@ import { Register } from "./auth/Register"
 import { Customers } from "./customers/Customers"
 import { HomePage } from "./homePage/HomePage"
 import { RequestForm } from "./Requests/RequestForm"
+import { RequestList } from "./Requests/RequestList"
 import { ChangeStatus } from "./Status/ChangeStatus"
 import { EditRequest } from "./Status/EditRequest"
 import { StatusMessageList } from "./Status/StatusMessageList"
@@ -39,6 +40,9 @@ export const ApplicationViews = () => {
             </Route >
             <Route exact path = "/requests/editstatus/:requestId(\d+)">
                 <ChangeStatus />
+            </Route >
+            <Route exact path = "/requestList">
+                <RequestList />
             </Route >
         </>
     )
