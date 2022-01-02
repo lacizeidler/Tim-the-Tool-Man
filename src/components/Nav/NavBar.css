@@ -46,3 +46,20 @@
     display: flex;
     justify-content: space-around;
 }
+.circle__img {
+    width: 20%;
+    margin-top: 20%;
+}
+.requests__number {
+    display: flex;
+}
+.numRows {
+    margin-left: 3px;
+    border: rgb(173, 0, 0) 1px solid;
+    border-radius: 50%;
+    padding: 0px 7px;
+    background-color: rgb(173, 0, 0);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}

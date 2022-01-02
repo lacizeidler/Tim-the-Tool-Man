@@ -4,8 +4,8 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { Customers } from "./customers/Customers"
 import { HomePage } from "./homePage/HomePage"
+import { RequestFilter } from "./Requests/RequestFilter"
 import { RequestForm } from "./Requests/RequestForm"
-import { RequestList } from "./Requests/RequestList"
 import { ChangeStatus } from "./Status/ChangeStatus"
 import { EditRequest } from "./Status/EditRequest"
 import { StatusMessageList } from "./Status/StatusMessageList"
@@ -42,7 +42,7 @@ export const ApplicationViews = () => {
                 <ChangeStatus />
             </Route >
             <Route exact path = "/requestList">
-                <RequestList />
+                <RequestFilter />
             </Route >
         </>
     )

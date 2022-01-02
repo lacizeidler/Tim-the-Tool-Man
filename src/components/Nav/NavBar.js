@@ -4,24 +4,17 @@ import "./NavBar.css"
 import wrench from "../../img/wrench.png"
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react/cjs/react.development"
-import { GetRegisterExistingUserCheck, GetRequestsTopicsUsers } from "../ApiManager"
+import { GetRegisterExistingUserCheck } from "../ApiManager"
+import { RequestNotification } from "../Requests/RequestNotification"
 
 export const NavBar = () => {
     const currentUser = parseInt(localStorage.getItem("toolMan_customer"))
     const [users, modifyUsers] = useState([])
-    const [requests, modifyRequests] = useState([])
 
     useEffect(
         () => {
             GetRegisterExistingUserCheck()
                 .then(modifyUsers)
-        },
-        []
-    )
-    useEffect(
-        () => {
-            GetRequestsTopicsUsers()
-                .then(modifyRequests)
         },
         []
     )
@@ -52,8 +45,9 @@ export const NavBar = () => {
                             {
                                 currentUser === 1
                                     ?
-                                    <li className="navbar__item">
+                                    <li className="navbar__item requests__number">
                                         <Link className="navbar__link" to="/requestList">Requests</Link>
+                                        <RequestNotification />
                                     </li>
                                     :
                                     <li className="navbar__item">
@@ -67,14 +61,7 @@ export const NavBar = () => {
                                         <Link className="navbar__link" to="/customers">Customers</Link>
                                     </li>
                                     : <li className="navbar__item">
-                                        {
-                                            requests.map(
-                                                (request) => {
-                                                    return <Link className={`navbar__link ${request.statusId === 1 ? "" : ""}`} to={`/requests/${currentUser}`}>Requests</Link>
-                                                }
-                                            )
-                                        }
-
+                                       <Link className={`navbar__link`} to={`/requests/${currentUser}`}>Requests</Link>
                                     </li>
                             }
                             <li className="navbar__item">

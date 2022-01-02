@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react/cjs/react.development"
-import { GetRequestsTopicsUsers, GetStatuses } from "../ApiManager"
+import { GetRequestsTopicsUsers } from "../ApiManager"
 import "../Status/StatusRequest.css"
 
 export const RequestList = () => {
     const [requests, modifyRequests] = useState([])
-    const [statuses, modifyStatuses] = useState([])
 
     useEffect(
         () => {
@@ -15,24 +14,8 @@ export const RequestList = () => {
         []
     )
 
-    useEffect(
-        () => {
-            GetStatuses()
-            .then(modifyStatuses)
-        },
-        []
-    )
-
     return(
         <>
-        <div>
-        <select className="status__filter">
-            <option>Filter by Status... </option>
-            {
-                    statuses.map(status => <option className="status__option" key={`status--${status.id}`} value={status.id}>{status.status}</option>)
-                }
-        </select>
-        </div>
             {
                 requests.map(
                     (request) => {

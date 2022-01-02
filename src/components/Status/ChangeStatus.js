@@ -80,7 +80,7 @@ export const ChangeStatus = () => {
                     onClick={
                         () => {
                             UpdatedRequest()
-                            history.push(`/requests/${request.userId}`)
+                            history.push(`/requestList`)
                             GetRequestsTopicsUsersWithId(requestId)
                             .then(modifyRequests)
                         }
