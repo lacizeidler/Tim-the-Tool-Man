@@ -16,6 +16,15 @@
 .status__request h2 {
     font-size: 30px;
 }
+.request__list {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
 .status__request h4 {
     font-size: 18px;
+}
+.status__filter {
+    font-size: 20px;
+    margin-left: 2%;
 }

@@ -3,7 +3,7 @@
     font-size: 40px;
 }
 .form {
-    border: black 2px solid;
+    border: rgb(0, 0, 0) 2px solid;
     padding: 6% 10%;
     margin: 6% 10%;
 }
@@ -28,4 +28,7 @@
 }
 .description textarea {
     height: 100px;
+}
+.status__label {
+    margin-left: 2%;
 }

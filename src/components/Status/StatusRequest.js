@@ -45,21 +45,8 @@ export const StatusRequest = () => {
                                 <h4>Topic: {request.topic.name}</h4>
                                 <h4>Description: {request.description}</h4>
                                 <h4>Budget: ${request.budget}</h4>
+                                <h4>Status: {request.status.status}</h4>
                                 <h4>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(request.timestamp)}</h4>
-                                <div>
-                            
-                                </div>
-                                <button
-                                    key={`/requests/editstatus/${request.id}`}
-                                    onClick={
-                                        () => {
-                                            history.push(`/requests/editstatus/${request.id}`)
-                                        }
-                                    }
-                                    value={request.id}
-                                >
-                                    Status
-                                </button>
                                 <button
                                     key={`/messageForm/${request.id}`}
                                     onClick={
@@ -86,6 +73,7 @@ export const StatusRequest = () => {
                                 <h4>Topic: {request.topic.name}</h4>
                                 <h4>Description: {request.description}</h4>
                                 <h4>Budget: ${request.budget}</h4>
+                                <h4>Status: {request.status.status}</h4>
                                 <h4>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(request.timestamp)}</h4>
                                 <button
                                     key={`/messageForm/${request.id}`}

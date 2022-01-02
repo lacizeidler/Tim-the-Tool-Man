@@ -28,7 +28,8 @@ export const EditRequest = () => {
             userId: request.userId,
             topicId: request.topicId,
             statusId: request.statusId,
-            budget: request.budget
+            budget: request.budget,
+            timestamp: request.timestamp
         }
         fetch(`http://localhost:8088/requests/${requestId}`, {
             method: "PUT",
