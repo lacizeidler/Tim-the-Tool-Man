@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom/cjs/react-router-dom.min"
+import { Link, useHistory } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react/cjs/react.development"
 import { GetRequestsTopicsUsers } from "../ApiManager"
 import "../Status/StatusRequest.css"
 
 export const RequestList = () => {
     const [requests, modifyRequests] = useState([])
+    const history = useHistory()
 
     useEffect(
         () => {
@@ -26,6 +27,17 @@ export const RequestList = () => {
                                 <h4>Budget: ${request.budget}</h4>
                                 <h4>Status: {request.status.status}</h4>
                                 <h4>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(request.timestamp)}</h4>
+                                <button
+                                    key={`/requests/editstatus/${request.id}`}
+                                    onClick={
+                                        () => {
+                                            history.push(`/requests/editstatus/${request.id}`)
+                                        }
+                                    }
+                                    value={request.id}
+                                >
+                                    Update Status
+                                </button>
                         </div>
                     }
                 )

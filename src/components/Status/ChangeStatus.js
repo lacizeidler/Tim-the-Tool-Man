@@ -61,7 +61,7 @@ export const ChangeStatus = () => {
                             onChange={
                                 (evt) => {
                                     const copy = { ...request }
-                                    copy.statusId = evt.target.value
+                                    copy.statusId = parseInt(evt.target.value)
                                     modifyRequest(copy)
                                 }
                             }>
