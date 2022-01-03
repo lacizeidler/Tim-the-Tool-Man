@@ -23,8 +23,26 @@ Each customer has access to their own requests and the messages that are sent be
 * JSON server 
 * VSCode 
 
+# Running This Application #
+**First, a note about authentication...**
 
+This application uses the mock authentication which is purely for demonstration purposes. Therefore the login and registration code written here is completely insecure and would never be implemented in a professional application. 
 
+**To run the application**
+1. Clone this repository and change the directory in the terminal. 
+```
+git clone git@github.com:lacizeidler/Tim-the-Tool-Man.git
+cd tim-the-tool-man
+```
+2. Access the data. 
+[Link](https://github.com/lacizeidler/Tool-Man-Server)
+3. Launch the client. 
+```
+npm install
+npm start 
+```
+# ERD #
+![This is an image](/src/img/ERD.png)
 
 
 
