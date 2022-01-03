@@ -17,7 +17,11 @@ export const RequestNotification = () => {
     const numRows = membersToRender.length
     return(
         <>
-        <div className="numRows">{numRows}</div>
+        {
+            numRows === 0 
+            ? ""
+            : <div className="numRows">{numRows}</div>
+        }
         </>
     )
 }

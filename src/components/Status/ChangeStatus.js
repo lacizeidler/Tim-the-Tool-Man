@@ -65,6 +65,7 @@ export const ChangeStatus = () => {
                                     modifyRequest(copy)
                                 }
                             }>
+                                <option value={0}>Change Status...</option>
                                 {
                                     statuses.map(
                                         (status) => {
@@ -80,9 +81,9 @@ export const ChangeStatus = () => {
                     onClick={
                         () => {
                             UpdatedRequest()
-                            history.push(`/requestList`)
                             GetRequestsTopicsUsersWithId(requestId)
                             .then(modifyRequests)
+                            history.push(`/requestList`)
                         }
                     }
                 >
