@@ -34,13 +34,17 @@ This application uses the mock authentication which is purely for demonstration 
 git clone git@github.com:lacizeidler/Tim-the-Tool-Man.git
 cd tim-the-tool-man
 ```
+
 2. Access the data. 
-[Link](https://github.com/lacizeidler/Tool-Man-Server)
+
+[JSON Server](https://github.com/lacizeidler/Tool-Man-Server)
+
 3. Launch the client. 
 ```
 npm install
 npm start 
 ```
+
 # ERD #
 ![This is an image](/src/img/ERD.png)
 
