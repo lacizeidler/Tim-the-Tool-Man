@@ -1,4 +1,4 @@
-//! The responsiblity of this module is to post the JSX to the dom. 
+//! The responsibility of this module is to post the JSX to the dom. 
 //! Should include the about me section, the services section, and the reviews section. 
 //! Needs to include a button with a click event that links to the form page. 
 import { useHistory } from "react-router"
@@ -7,8 +7,9 @@ import tools from "../../img/tools.png"
 import "./HomePage.css"
 
 export const HomePage = () => {
-    //* History keeps track of your urls that youve visited and directs the user there through a click event. At least in this application. 
+    //* History keeps track of your urls that you've visited and directs the user there through a click event. At least in this application. 
     const history = useHistory()
+    const currentUser = parseInt(localStorage.getItem("toolMan_customer"))
     return (
         <>
             <h2 className="about__me">About Me</h2>
@@ -24,13 +25,23 @@ export const HomePage = () => {
                 <p>Need cabinets restored? Submit a request.  </p>
                 <p>Ready for new flooring? Submit a request.  </p>
                 </div>
-                <button 
+                {
+                    currentUser 
+                    ? <button 
                     onClick={
                         () => {
                             history.push("/form")
                         }
                     }
                 >Submit a Request</button>
+                : <button 
+                onClick={
+                    () => {
+                        history.push("/login")
+                    }
+                }
+            >Sign In</button>
+                }
             </div>
             <div>
                 <h2 className="people__saying">What people are saying</h2>

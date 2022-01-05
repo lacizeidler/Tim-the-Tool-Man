@@ -13,8 +13,9 @@ export const RequestNotification = () => {
         []
     )
 
-    const membersToRender = requests.filter(request => request.statusId === 1)
-    const numRows = membersToRender.length
+        const membersToRender = requests.filter(request => request.statusId === 1)
+        const numRows = membersToRender.length
+        
     return(
         <>
         {

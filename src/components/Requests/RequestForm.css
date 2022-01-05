@@ -4,6 +4,7 @@
 }
 .form {
     border: rgb(0, 0, 0) 2px solid;
+    background-color: #3a3b3c;
     padding: 6% 10%;
     margin: 6% 10%;
 }

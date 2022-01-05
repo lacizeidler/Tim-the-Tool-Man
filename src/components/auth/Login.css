@@ -4,15 +4,19 @@
 
 fieldset {
     min-width: 0;
-    padding: 1rem 0;
+    padding: 1rem;
     margin: 0;
     border: 0;
 }
 
 .form--login {
     display: inline-block;
-    margin: 0 auto;
+    margin: 10% auto;
     text-align: left;
+}
+
+.form--login h2 {
+    padding-left: 3%;
 }
 
 .form--login > fieldset > input[type="email"] {
@@ -46,9 +50,10 @@ fieldset {
 }
 
 .form--login {
-    background-position-x: right;
+    background-position-x: bottom;
+    background-position-y: center;
     z-index: 1;
-    min-height: 25rem;
+    min-height: 30rem;
     min-width: 45rem;
     background-color: hsla(0,0%,100%,0.40);
     background-blend-mode: overlay;

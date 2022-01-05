@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom"
 import "./Login.css"
+import login from "../../img/login.jpg"
 
 export const Login = () => {
     const [email, set] = useState("")
@@ -35,7 +36,7 @@ export const Login = () => {
             </dialog>
 
             <section>
-                <form className="form--login" onSubmit={handleLogin}>
+                <form style={{ backgroundImage: `url(${login})` }} className="form--login" onSubmit={handleLogin}>
                     <h2>Please sign in</h2>
                     <fieldset>
                         <label htmlFor="inputEmail"> Email address </label>
