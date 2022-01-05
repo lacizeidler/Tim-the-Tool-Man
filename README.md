@@ -35,7 +35,7 @@ cd tim-the-tool-man
 
 2. Access the data. 
 
-<a href="https://github.com/lacizeidler/Tool-Man-Server" class="button">Click Here (https://github.com/lacizeidler/Tool-Man-Server)</a>
+<a href="https://github.com/lacizeidler/Tool-Man-Server" class="button pill">Click Here</a>
 
 3. Launch the client. 
 ```
