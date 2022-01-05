@@ -1,7 +1,7 @@
 .logo {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(246, 246, 246);
+    background-color: #3a3b3c;
     border-bottom: black 2px solid;
 }
 .logo__right{
@@ -26,7 +26,7 @@
 
 .navbar {
     display: flex;
-    background-color: white;
+    background-color: #18191A;
 }
 
 .navbar__item{
@@ -36,11 +36,13 @@
     padding: 1% 3%;
     margin: 0px 7% 2% 7%;
     border-radius: 10px;
+    background-color: #3a3b3c
 }
 
 .navbar__link {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
+    
 }
 .unordered__list {
     display: flex;
@@ -55,11 +57,11 @@
 }
 .numRows {
     margin-left: 3px;
-    border: rgb(173, 0, 0) 1px solid;
+    border: rgba(255, 0, 0, 0.759) 1px solid;
     border-radius: 50%;
     padding: 0px 7px;
-    background-color: rgb(173, 0, 0);
+    background-color: rgb(255, 0, 0, 0.759);
     color: white;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }

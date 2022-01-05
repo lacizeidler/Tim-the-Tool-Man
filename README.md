@@ -14,14 +14,12 @@ Each customer has access to their own requests and the messages that are sent be
 * Tim can filter through the requests and change the status of the request. 
 
 # Technologies Used #
-* HTML5
-* CSS3
-* Javascript 
-* React 
-* GIT 
-* GitHub 
-* JSON server 
-* VSCode 
+* HTML5 ![HTML](/src/img/html.png)
+* CSS3 ![CSS](/src/img/css.png)
+* Javascript  ![Javascript](/src/img/javascript.png)
+* React ![React](/src/img/react.png)
+* GIT ![GIT](/src/img/git.png)
+* GitHub ![GITHUB](/src/img/github.png)
 
 # Running This Application #
 **First, a note about authentication...**
@@ -37,7 +35,7 @@ cd tim-the-tool-man
 
 2. Access the data. 
 
-[JSON Server](https://github.com/lacizeidler/Tool-Man-Server)
+<a href="https://github.com/lacizeidler/Tool-Man-Server" class="button">Click Here (https://github.com/lacizeidler/Tool-Man-Server)</a>
 
 3. Launch the client. 
 ```

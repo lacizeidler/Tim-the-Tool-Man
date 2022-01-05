@@ -4,6 +4,7 @@
 }
 .status__request {
     border: black 2px solid;
+    background-color: #3a3b3c;
     width: 60%;
     margin: 2% 15%;
     padding: 5%;

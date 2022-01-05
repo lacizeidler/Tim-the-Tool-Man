@@ -5,7 +5,6 @@ import { useHistory } from "react-router"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import { useEffect, useState } from "react/cjs/react.development"
 import { GetRequestsFromUser } from "../ApiManager"
-import { MessageNotifications } from "./MessageNotifications"
 import "./StatusRequest.css"
 
 export const StatusRequest = () => {
@@ -87,7 +86,6 @@ export const StatusRequest = () => {
                                 >
                                     Messages
                                 </button>
-                                <MessageNotifications />
                                 <button
                                     onClick={
                                         () => {
